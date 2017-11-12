@@ -4,7 +4,6 @@ import (
   "fmt"
   "strconv"
   "log"
-  "io/ioutil"
   "net/http"
   "github.com/gorilla/mux"
 )
@@ -26,18 +25,12 @@ func gitPullCmd(){
 
    if Err != nil{
     
-    s := fmt.Sprint(Err) + ": Out - Error on Pull"
-    writeFile(s+"\n", "error")
+    fmt.Println(fmt.Sprint(Err) + ": Out - Error on Pull")
 
    }else{
 
      s:= string(Out)
-     writeFile(s+"\n", "success")     
+     fmt.Println(s)
+       
    }
 }
-
-func writeFile(in string, logName string){
-  fout := []byte(in);
-  ioutil.WriteFile("./"+logName+"-logs.txt", fout, 0644)
-}
-
