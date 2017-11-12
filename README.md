@@ -34,7 +34,7 @@ and build the bin:
 
 So, after tha you will get a bin that you will run in you repo folder at the your server.
 
-##Deploy
+### Deploy
 
 Here we need a hash to be your endpoint, so you just need run the bin built in prev step:
 
