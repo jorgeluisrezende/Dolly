@@ -32,7 +32,7 @@ and build the bin:
 # go build *.go
 ```
 
-So, after tha you will get a bin that you will run in you repo folder at the your server.
+So, after that you will get a bin that you will run in you repo folder at the your server.
 
 ### Deploy
 
@@ -44,14 +44,20 @@ Here we need a hash to be your endpoint, so you just need run the bin built in p
 It will return to you a md5 hash, you don't need expecificaly a hash but it is a simple way to keep your and point "safe", you just need copy to use in the next step:
 
 ```
-"YOURGOPATH"/src/github.com/jorgeluisrezende/Dolly:# ./dolly -s -p "a port that you want" -hash "you hash got at the prev step" &
+"Repo that will be deployed":# ./"YOURGOPATH"/src/github.com/jorgeluisrezende/Dolly/dolly -s -p "a port that you want" -hash "you hash got at the prev step" &
 ```
+
 With that you will get up your hook server in the background, if you dont want to put a port the server will run at the 8001 port. Your endpoint will be something like this:
 
 ```
 localhost:8001/"yourhash" or localhost:"yourport"/"yourhash"
 ```
 Now you just need open it in you nginx, apache or whatever server you want and do the next step that is configurate your hook on bitbucket or github.
+
+Here there is a tutorial how to configure a webhook in [bitbucket](https://confluence.atlassian.com/bitbucket/manage-webhooks-735643732.html)
+
+And here in [github](https://developer.github.com/webhooks/)
+
 
 ## Authors
 
