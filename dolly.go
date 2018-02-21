@@ -7,9 +7,16 @@ import (
 	"net/http"
 	"os/exec"
 	"strconv"
-
+	"encoding/json"
+	"time"
 	"github.com/gorilla/mux"
 )
+
+// Config - struct that will get the config file
+type Config struct {
+	DeployEndpoint string `json:"deploy_endpoint"`
+	Email          string `json:"email"`
+}
 
 // CreateServer - it set up the web server to liten the hook
 func CreateServer(p *int, h *string) {
@@ -32,8 +39,9 @@ func gitPullCmd() {
 		writeFile(s+"\n", "error")
 
 	} else {
+		t := time.Now().UTC()
 		s := string(Out)
-		writeFile(s+"\n", "success")
+		writeFile("["+t.Format("2006-01-02 15:04:05")+"] "+s+"\n", "success")
 	}
 }
 

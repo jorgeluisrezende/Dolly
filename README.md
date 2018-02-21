@@ -1,6 +1,6 @@
 # Dolly.go
 
-##Single binary application
+## Single binary application
 
 This is a simple tool to deploy your application by a git repository, written in golang. It works like a webserver that you have a endpoint that will be your hook.
 

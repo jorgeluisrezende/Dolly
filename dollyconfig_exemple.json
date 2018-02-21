@@ -1,5 +1,5 @@
 {
     "deploy_endpoint": "deploy",
     "email": "",
-    "get_logs_endpoint":""
+    "get_logs_endpoint": ""
 }
